@@ -3,10 +3,10 @@ from typing import TYPE_CHECKING
 
 from typing import List, Optional, Union
 from datetime import datetime
-from pydantic import StrictInt, StrictFloat
+from pydantic.v1 import StrictInt, StrictFloat
 
 
-from pydantic import Field
+from pydantic.v1 import Field
 from pydantic_schemaorg.Intangible import Intangible
 
 

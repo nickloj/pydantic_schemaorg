@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 
-from pydantic import Field
+from pydantic.v1 import Field
 from pydantic_schemaorg.NewsArticle import NewsArticle
 from pydantic_schemaorg.CriticReview import CriticReview
 

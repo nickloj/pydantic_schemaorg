@@ -3,10 +3,10 @@ from typing import TYPE_CHECKING
 
 from datetime import date, datetime
 from typing import List, Optional, Union
-from pydantic import AnyUrl
+from pydantic.v1 import AnyUrl
 
 
-from pydantic import Field
+from pydantic.v1 import Field
 from pydantic_schemaorg.Intangible import Intangible
 
 

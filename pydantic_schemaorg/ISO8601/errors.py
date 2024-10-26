@@ -1,4 +1,4 @@
-from pydantic import PydanticValueError
+from pydantic.v1 import PydanticValueError
 
 
 class ISO8601DateError(PydanticValueError):

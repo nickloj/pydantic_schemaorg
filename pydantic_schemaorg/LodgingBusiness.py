@@ -2,11 +2,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from typing import List, Optional, Union
-from pydantic import StrictBool, StrictInt, StrictFloat
+from pydantic.v1 import StrictBool, StrictInt, StrictFloat
 from datetime import datetime, time
 
 
-from pydantic import Field
+from pydantic.v1 import Field
 from pydantic_schemaorg.LocalBusiness import LocalBusiness
 
 

@@ -5,7 +5,7 @@ from typing import List, Optional, Union
 from datetime import datetime, time
 
 
-from pydantic import Field
+from pydantic.v1 import Field
 from pydantic_schemaorg.Thing import Thing
 
 

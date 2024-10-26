@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 
-from pydantic import Field
+from pydantic.v1 import Field
 from pydantic_schemaorg.PaymentCard import PaymentCard
 from pydantic_schemaorg.LoanOrCredit import LoanOrCredit
 

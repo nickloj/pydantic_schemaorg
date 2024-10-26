@@ -5,7 +5,7 @@ from datetime import datetime
 from typing import List, Optional, Union
 
 
-from pydantic import Field
+from pydantic.v1 import Field
 from pydantic_schemaorg.BlogPosting import BlogPosting
 
 

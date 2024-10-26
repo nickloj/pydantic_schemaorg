@@ -5,7 +5,7 @@ from datetime import date, datetime
 from typing import List, Optional, Union
 
 
-from pydantic import Field
+from pydantic.v1 import Field
 from pydantic_schemaorg.Series import Series
 from pydantic_schemaorg.CreativeWork import CreativeWork
 

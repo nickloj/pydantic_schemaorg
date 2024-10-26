@@ -102,7 +102,7 @@ class SchemaOrg:
                 if name != field_type:
                     imports = self.update_imports(
                         imports,
-                        class_path=f"{PACKAGE_NAME}.{field_type}",
+                        class_path=f"{PACKAGE_NAME}.v1.{field_type}",
                         classes_={field_type},
                         type="pydantic_field",
                     )
@@ -172,7 +172,7 @@ class SchemaOrg:
         for parent in parents:
             imports = self.update_imports(
                 imports,
-                class_path=f"{PACKAGE_NAME}.{parent.valid_name}",
+                class_path=f"{PACKAGE_NAME}.v1.{parent.valid_name}",
                 classes_={parent.valid_name},
                 type="parent",
             )
@@ -189,9 +189,9 @@ class SchemaOrg:
             forward_refs=forward_refs
         )
 
-        with open(f"{PACKAGE_NAME}/{self.pydantic_classes[name].valid_name}.py", "w") as model_file:
+        with open(Path(PACKAGE_NAME) / f"{self.pydantic_classes[name].valid_name}.py", "w") as model_file:
             with open(
-                    Path(__file__).parent / "templates/model.py.tpl"
+                    Path(__file__).parent / "templates" / "model.py.tpl"
             ) as template_file:
                 template = jinja_env.from_string(template_file.read())
                 template_args = dict(
@@ -253,12 +253,12 @@ class SchemaOrg:
 
     @staticmethod
     def _get_default_imports() -> List[Import]:
-        return [Import(classes_={"Field"}, classPath="pydantic", type="parent")]
+        return [Import(classes_={"Field"}, classPath="pydantic.v1", type="parent")]
 
     def write_init(self):
-        with open(f"{PACKAGE_NAME}/__init__.py", "w") as init_file:
+        with open(Path(PACKAGE_NAME) / "__init__.py", "w") as init_file:
             with open(
-                    Path(__file__).parent / "templates/__init__.py.tpl"
+                    Path(__file__).parent / "templates" / "__init__.py.tpl"
             ) as template_file:
                 template = jinja_env.from_string(template_file.read())
 
@@ -273,9 +273,9 @@ class SchemaOrg:
         self.write_type_map()
 
     def write_type_map(self):
-        with open(f"{PACKAGE_NAME}/__types__.py", "w") as type_file:
+        with open(Path(PACKAGE_NAME) / "__types__.py", "w") as type_file:
             with open(
-                    Path(__file__).parent / "templates/__types__.py.tpl"
+                    Path(__file__).parent / "templates" / "__types__.py.tpl"
             ) as template_file:
                 template = jinja_env.from_string(template_file.read())
 
