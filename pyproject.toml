@@ -16,7 +16,7 @@ documentation = "https://github.com/lexiq-legal/pydantic_schemaorg"
 keywords = ["schema.org", "pydantic"]
 
 [tool.poetry.dependencies]
-pydantic = "^1.8.2"
+pydantic = "^2.9.2"
 
 [tool.poetry.dev-dependencies]
 black = { version = "^21.11b1", python = "^3.8" }
